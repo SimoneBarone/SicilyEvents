@@ -1,0 +1,412 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<!-- HERO SECTION: Struttura a Cornice con Slider -->
+<section class="hero-wrapper">
+    
+    <div id="heroFrame" class="hero-frame">
+        
+        <!-- CAROSELLO IMMAGINI (SLIDER) -->
+        <div class="hero-slider">
+
+             <!-- FRECCE DI NAVIGAZIONE -->
+        <!-- onclick="event.stopPropagation()" evita che il click sulla freccia attivi anche il click sulla foto -->
+        <div class="slider-arrow prev" onclick="changeSlide(-1); event.stopPropagation();">&#10094;</div>
+        <div class="slider-arrow next" onclick="changeSlide(1); event.stopPropagation();">&#10095;</div>
+            
+            <!-- Slide 1 -->
+            <!-- Nota: Assicurati che 'sicily_bg.jpg' sia dentro static/img -->
+            <div class="slide active" 
+                 style="background-image: url('/static/img/carosello_uno.jpg');">
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="slide" 
+                 style="background-image: url('/static/img/carosello_due.jpg');">
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="slide" 
+                 style="background-image: url('/static/img/carosello_tre.jpg');">
+            </div>
+
+        </div>
+
+        <!-- OVERLAY E TESTO (Rimangono fissi sopra le slide) -->
+        <div class="hero-overlay"></div>
+        
+        <div class="hero-text">
+            <h5>Welcome to Sicily</h5>
+            <h1>Crafting Unforgettable <br> Experiences</h1>
+            <p>The leading Destination Management Company & Wedding Planner.</p>
+        </div>
+        
+    </div> <!-- Fine hero-frame -->
+
+</section>
+
+<!-- ... (Hero Section e Philosophy Section rimangono uguali sopra) ... -->
+
+<!-- SEZIONE PHILOSOPHY -->
+<section style="padding: 80px 0; text-align: center; position: relative; background: white;">
+    <div style="max-width: 800px; margin: 0 auto; padding: 0 20px;">
+        <h5 style="color: var(--accent-color); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 15px; font-size: 0.8rem; font-weight: 600;">Sicily Events Expertise</h5>
+        <h3 style="font-family: 'Playfair Display', serif; font-size: 2.2rem; margin-bottom: 25px; color: var(--primary-color);">Sicilian Soul, Global Standards.</h3>
+        <p style="font-size: 1.05rem; color: #666; line-height: 1.8; margin-bottom: 60px;">
+          SicilyEvents is a specialized Destination Management Company (DMC) for corporate events in Sicily, Italy: incentives , conferences, business meetings, event production, special and automotive events.
+          La Sicilia è bella! We love Sicily and we will show that to you. We have years of experience, a large network of high-end suppliers and we have worked for many international clients and multinationals.
+          Our approach for each project or request is to work as a team with clients and suppliers alike. Each project is different and we always look for new ideas and new challenges to maximize your Sicily experience.
+        </p>
+    </div>
+
+<!-- NUOVO CONTENITORE GRIGIO PER I SERVIZI -->
+<div class="services-container">
+    
+    <!-- TITOLO SEZIONE CON DECORAZIONE -->
+    <div class="section-header">
+        <h4>DMC Sicily</h4>
+        <h2>Destination Management Company</h2>
+        <div class="gold-separator"></div>
+    </div>
+
+    <!-- LE 5 CARD (Ora dentro il contenitore grigio) -->
+    <section class="split-section" style="margin-bottom: 0;"> <!-- margin-bottom 0 perché c'è il padding del container -->
+        
+        <!-- 1. Incentives -->
+        <div class="split-card incentives" 
+             style="background-image: url('https://images.unsplash.com/photo-1504593811423-6dd665756598?q=80&w=2070');"> 
+            <div class="content">
+                <h2>Incentives</h2>
+                <p>Rewarding travel experiences.</p>
+                <a href="#" class="btn">Discover</a>
+            </div>
+        </div>
+        
+        <!-- 2. Meetings -->
+        <div class="split-card meetings"
+             style="background-image: url('https://images.unsplash.com/photo-1511578314322-379afb476865?q=80&w=2070');">
+            <div class="content">
+                <h2>Meetings</h2>
+                <p>Professional conferences & venues.</p>
+                <a href="#" class="btn">Discover</a>
+            </div>
+        </div>
+
+        <!-- 3. Team Building -->
+        <div class="split-card teambuilding"
+             style="background-image: url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070');">
+            <div class="content">
+                <h2>Team Building</h2>
+                <p>Engaging activities for groups.</p>
+                <a href="#" class="btn">Discover</a>
+            </div>
+        </div>
+
+        <!-- 4. Special Events -->
+        <div class="split-card special-events"
+             style="background-image: url('https://images.unsplash.com/photo-1527529482837-4698179dc6ce?q=80&w=2070');">
+            <div class="content">
+                <h2>Special Events</h2>
+                <p>Galas, parties & celebrations.</p>
+                <a href="#" class="btn">Discover</a>
+            </div>
+        </div>
+
+        <!-- 5. Automotive Events -->
+        <div class="split-card automotive"
+             style="background-image: url('https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?q=80&w=2070');">
+            <div class="content">
+                <h2>Automotive</h2>
+                <p>Scenic drives & car launches.</p>
+                <a href="#" class="btn">Discover</a>
+            </div>
+        </div>
+    </section>
+
+</div> <!-- Fine services-container -->
+
+
+<!-- SEZIONE CLIENTI -->
+<section class="clients-section">
+    <div class="clients-wrapper">
+        
+        <!-- Frase con Ali Dorate -->
+        <h3 class="clients-intro">
+            We are proud to serve many clients in many ways
+        </h3>
+        
+        <!-- CAROSELLO LOGHI VIP (Solo i più importanti e riconoscibili) -->
+        <div class="logo-slider">
+            <div class="logo-slide-track">
+                <!-- Gruppo 1 -->
+                <div class="slide-logo"><img src="https://logo.clearbit.com/google.com" alt="Google"></div>
+                <div class="slide-logo"><img src="https://logo.clearbit.com/enel.com" alt="Enel"></div>
+                <div class="slide-logo"><img src="https://logo.clearbit.com/honda.com" alt="Honda"></div>
+                <div class="slide-logo"><img src="https://logo.clearbit.com/nestle.com" alt="Nestle"></div>
+                <div class="slide-logo"><img src="https://logo.clearbit.com/youtube.com" alt="Youtube"></div>
+                <div class="slide-logo"><img src="https://logo.clearbit.com/siemens.com" alt="Siemens"></div>
+                <div class="slide-logo"><img src="https://logo.clearbit.com/bnp.bg" alt="BNP Paribas"></div>
+                <div class="slide-logo"><img src="https://logo.clearbit.com/electrolux.com" alt="Electrolux"></div>
+                <div class="slide-logo"><img src="https://logo.clearbit.com/toshiba.com" alt="Toshiba"></div>
+                <div class="slide-logo"><img src="https://logo.clearbit.com/westernunion.com" alt="Western Union"></div>
+                <div class="slide-logo"><img src="https://logo.clearbit.com/sanpellegrino.com" alt="San Pellegrino"></div>
+                <div class="slide-logo"><img src="https://logo.clearbit.com/delonghi.com" alt="DeLonghi"></div>
+                <div class="slide-logo"><img src="https://logo.clearbit.com/ey.com" alt="Ernst & Young"></div>
+                <div class="slide-logo"><img src="https://logo.clearbit.com/adecco.com" alt="Adecco"></div>
+                <div class="slide-logo"><img src="https://logo.clearbit.com/mitsubishicars.com" alt="Mitsubishi"></div>
+
+                <!-- Gruppo 2 (Copia esatta per loop) -->
+                <div class="slide-logo"><img src="https://logo.clearbit.com/google.com" alt="Google"></div>
+                <div class="slide-logo"><img src="https://logo.clearbit.com/enel.com" alt="Enel"></div>
+                <div class="slide-logo"><img src="https://logo.clearbit.com/honda.com" alt="Honda"></div>
+                <div class="slide-logo"><img src="https://logo.clearbit.com/nestle.com" alt="Nestle"></div>
+                <div class="slide-logo"><img src="https://logo.clearbit.com/youtube.com" alt="Youtube"></div>
+                <div class="slide-logo"><img src="https://logo.clearbit.com/siemens.com" alt="Siemens"></div>
+                <div class="slide-logo"><img src="https://logo.clearbit.com/bnp.bg" alt="BNP Paribas"></div>
+                <div class="slide-logo"><img src="https://logo.clearbit.com/electrolux.com" alt="Electrolux"></div>
+                <div class="slide-logo"><img src="https://logo.clearbit.com/toshiba.com" alt="Toshiba"></div>
+                <div class="slide-logo"><img src="https://logo.clearbit.com/westernunion.com" alt="Western Union"></div>
+                <div class="slide-logo"><img src="https://logo.clearbit.com/sanpellegrino.com" alt="San Pellegrino"></div>
+                <div class="slide-logo"><img src="https://logo.clearbit.com/delonghi.com" alt="DeLonghi"></div>
+                <div class="slide-logo"><img src="https://logo.clearbit.com/ey.com" alt="Ernst & Young"></div>
+                <div class="slide-logo"><img src="https://logo.clearbit.com/adecco.com" alt="Adecco"></div>
+                <div class="slide-logo"><img src="https://logo.clearbit.com/mitsubishicars.com" alt="Mitsubishi"></div>
+            </div>
+        </div>
+
+        <!-- LISTA TESTUALE DEGLI ALTRI CLIENTI -->
+        <div class="client-text-list">
+            <span class="client-name">Advector</span>
+            <span class="client-name">Alenium</span>
+            <span class="client-name">Alfaparf</span>
+            <span class="client-name">Aspen</span>
+            <span class="client-name">At Osborne</span>
+            <span class="client-name">Berendson</span>
+            <span class="client-name">Biogen Idec</span>
+            <span class="client-name">Biral</span>
+            <span class="client-name">Bramwell</span>
+            <span class="client-name">Capgemini</span>
+            <span class="client-name">CFM</span>
+            <span class="client-name">Citadell</span>
+            <span class="client-name">CRC</span>
+            <span class="client-name">Domino</span>
+            <span class="client-name">Dupont</span>
+            <span class="client-name">Ekol</span>
+            <span class="client-name">Electroned</span>
+            <span class="client-name">Elsevier</span>
+            <span class="client-name">ESA</span>
+            <span class="client-name">Europgroup</span>
+            <span class="client-name">Fastighetsbyrån</span>
+            <span class="client-name">FCA Bank</span>
+            <span class="client-name">Fibercount</span>
+            <span class="client-name">Finanzgruppe</span>
+            <span class="client-name">Gambro</span>
+            <span class="client-name">Grodan</span>
+            <span class="client-name">Honeywell</span>
+            <span class="client-name">HURCO</span>
+            <span class="client-name">Huawei</span>
+            <span class="client-name">I-Direct</span>
+            <span class="client-name">IMC</span>
+            <span class="client-name">Imtech</span>
+            <span class="client-name">JC Decaux</span>
+            <span class="client-name">Konica</span>
+            <span class="client-name">Krogsveen</span>
+            <span class="client-name">Krokus PE</span>
+            <span class="client-name">Lafarge</span>
+            <span class="client-name">Malca-Amit</span>
+            <span class="client-name">Menigo</span>
+            <span class="client-name">Metis</span>
+            <span class="client-name">Monex</span>
+            <span class="client-name">Motul</span>
+            <span class="client-name">Mundipharma</span>
+            <span class="client-name">Nandos</span>
+            <span class="client-name">Novartis</span>
+            <span class="client-name">Numonix</span>
+            <span class="client-name">Onninen</span>
+            <span class="client-name">Pharmamar</span>
+            <span class="client-name">Pierre Fabre</span>
+            <span class="client-name">Plus</span>
+            <span class="client-name">Polkomtel</span>
+            <span class="client-name">Powder Byrne</span>
+            <span class="client-name">Ricoh</span>
+            <span class="client-name">Runtastic</span>
+            <span class="client-name">Santander</span>
+            <span class="client-name">SCA</span>
+            <span class="client-name">Solvay</span>
+            <span class="client-name">Stannah</span>
+            <span class="client-name">Tegrus</span>
+            <span class="client-name">Teleac</span>
+            <span class="client-name">Telecom</span>
+            <span class="client-name">Teva</span>
+            <span class="client-name">Thule</span>
+            <span class="client-name">Tzorg</span>
+            <span class="client-name">Uniqa</span>
+            <span class="client-name">UPC</span>
+            <span class="client-name">Van Ameyde</span>
+            <span class="client-name">Vertex</span>
+            <span class="client-name">Vorwerk</span>
+            <span class="client-name">Vub Banka</span>
+            <span class="client-name">Wallvision</span>
+            <span class="client-name">Young Capital</span>
+            <span class="client-name">YPO</span>
+        </div>
+
+    </div>
+</section>
+
+<!-- SEZIONE TO DO & TO SEE (FOTO LOCALI) -->
+<div class="todo-section">
+    
+    <!-- Intestazione Sezione -->
+    <div class="section-header">
+        <h4>Discover Sicily</h4>
+        <h2>To Do & To See</h2>
+        <div class="gold-separator"></div>
+    </div>
+
+    <!-- Griglia 4 Card -->
+    <div class="todo-grid">
+        
+        <!-- CARD 1: EXPERIENCES -->
+        <div class="todo-card">
+            <div class="todo-img">
+                <!-- Cerca static/img/todo_uno.jpg -->
+                <img src="{{ url_for('static', filename='img/todo_uno.jpg') }}" alt="Experiences">
+            </div>
+            <div class="todo-content">
+                <h3>Experiences</h3>
+                <ul class="todo-list-no-bullet">
+                    <li>Mount Etna Volcano</li>
+                    <li>Helicopter flights</li>
+                    <li>Grape & olive picking</li>
+                    <li>Culinary experiences</li>
+                    <li>Vintage car tours</li>
+                </ul>
+                <a href="#" class="btn-card">Explore</a>
+            </div>
+        </div>
+
+        <!-- CARD 2: ACTIVITIES -->
+        <div class="todo-card">
+            <div class="todo-img">
+                <!-- Cerca static/img/todo_due.jpg -->
+                <img src="{{ url_for('static', filename='img/todo_due.jpg') }}" alt="Activities">
+            </div>
+            <div class="todo-content">
+                <h3>Activities</h3>
+                <ul class="todo-list-no-bullet">
+                    <li>Quad biking</li>
+                    <li>Sailing regattas</li>
+                    <li>Qooder & Vespa tours</li>
+                    <li>Tubing & Canyoning</li>
+                    <li>Beach activities</li>
+                </ul>
+                <a href="#" class="btn-card">Explore</a>
+            </div>
+        </div>
+
+        <!-- CARD 3: TO SEE -->
+        <div class="todo-card">
+            <div class="todo-img">
+                <!-- Cerca static/img/todo_tre.jpg -->
+                <img src="{{ url_for('static', filename='img/todo_tre.jpg') }}" alt="To See">
+            </div>
+            <div class="todo-content">
+                <h3>To See</h3>
+                <ul class="todo-list-no-bullet">
+                    <li>Baroque towns</li>
+                    <li>Medieval villages</li>
+                    <li>Aeolian and Egadi islands</li>
+                    <li>Valley of the temples</li>
+                    <li>Salt panes, Trapani</li>
+                </ul>
+                <a href="#" class="btn-card">Explore</a>
+            </div>
+        </div>
+
+        <!-- CARD 4: CSR & GREEN IDEAS -->
+        <div class="todo-card">
+            <div class="todo-img">
+                <!-- Cerca static/img/todo_quattro.jpg -->
+                <img src="{{ url_for('static', filename='img/todo_quattro.jpg') }}" alt="CSR & Green Ideas">
+            </div>
+            <div class="todo-content">
+                <h3>CSR & Green Ideas</h3>
+                <ul class="todo-list-no-bullet">
+                    <li>Fire prevention with Corpo Forestale</li>
+                    <li>Plant and adopt olive/almond trees</li>
+                    <li>Slow-food, KM0, buy local</li>
+                    <li>Food bank of Sicily donation</li>
+                    <li>Clean the beach with Lega Ambiente</li>
+                </ul>
+                <a href="#" class="btn-card">Explore</a>
+            </div>
+        </div>
+
+    </div>
+</div>
+ 
+<!-- CTA SECTION (NUOVA VERSIONE PULITA) -->
+<section class="cta-section">
+    <div class="cta-content">
+        <h2>You want to organize a corporate event in Sicily? <br> We make it happen with you!</h2>
+        <a href="{{ url_for('contact') }}" class="btn-cta-gold">Contact Us</a>
+    </div>
+</section>
+
+<!-- GALLERY STRIP CON FRECCE OPACHE -->
+    <div class="gallery-strip" style="padding-bottom: 0; margin-bottom: -40px;"> <!-- Rimosso padding e aggiunto margine negativo -->
+    <!-- Frecce di Navigazione Manuale -->
+    <div class="gallery-nav prev" onclick="scrollGallery(-1)">&#10094;</div>
+    <div class="gallery-nav next" onclick="scrollGallery(1)">&#10095;</div>
+
+    <div class="gallery-track">
+        <!-- ORIGINALI -->
+        <div class="gallery-item"><img src="{{ url_for('static', filename='img/uno.jpg') }}" alt="1"></div>
+        <div class="gallery-item"><img src="{{ url_for('static', filename='img/due.jpg') }}" alt="2"></div>
+        <div class="gallery-item"><img src="{{ url_for('static', filename='img/tre.jpg') }}" alt="3"></div>
+        <div class="gallery-item"><img src="{{ url_for('static', filename='img/quattro.jpg') }}" alt="4"></div>
+        <div class="gallery-item"><img src="{{ url_for('static', filename='img/cinque.jpg') }}" alt="5"></div>
+        <div class="gallery-item"><img src="{{ url_for('static', filename='img/sei.jpg') }}" alt="6"></div>
+        <div class="gallery-item"><img src="{{ url_for('static', filename='img/sette.jpg') }}" alt="7"></div>
+        <div class="gallery-item"><img src="{{ url_for('static', filename='img/otto.jpg') }}" alt="8"></div>
+        <div class="gallery-item"><img src="{{ url_for('static', filename='img/nove.jpg') }}" alt="9"></div>
+        <div class="gallery-item"><img src="{{ url_for('static', filename='img/dieci.jpg') }}" alt="10"></div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // --- LOGICA SLIDER HERO (Sopra) ---
+        const slides = document.querySelectorAll('.slide');
+        let currentSlide = 0;
+        let slideInterval; 
+        window.changeSlide = function(direction) {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + direction + slides.length) % slides.length;
+            slides[currentSlide].classList.add('active');
+            resetTimer();
+        }
+        function resetTimer() {
+            clearInterval(slideInterval); 
+            slideInterval = setInterval(() => changeSlide(1), 5000); 
+        }
+        resetTimer();
+
+        // --- LOGICA GALLERY (Sotto) ---
+        const galleryTrack = document.querySelector('.gallery-track');
+        
+        // Funzione per scrollare la galleria
+        window.scrollGallery = function(direction) {
+            // Sposta di circa una foto (350px + 20px gap = 370px)
+            const scrollAmount = 370; 
+            galleryTrack.scrollBy({
+                left: direction * scrollAmount,
+                behavior: 'smooth'
+            });
+        }
+    });
+</script>
+
+{% endblock %}

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }} | {{ site.name }}</title>
+    
+    <!-- Font Caricati: Montserrat (Testi) e Playfair Display (Titoli) -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="{{ url_for('home') }}">
+                    <!-- Assicurati che il file logo_sicilyevents.png esista in static/img -->
+                    <img src="{{ url_for('static', filename='img/logo_sicilyevents.png') }}" alt="Sicily Events Logo">
+                </a>
+            </div>
+            <ul class="nav-links">
+                {% for item in site.nav_items %}
+                <li><a href="{{ url_for(item.url) }}">{{ item.name }}</a></li>
+                {% endfor %}
+            </ul>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Qui verrà iniettato il contenuto delle pagine specifiche (es. index.html) -->
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- FOOTER PROFESSIONALE (Visibile su tutte le pagine) -->
+    <footer>
+        <div class="footer-content">
+            
+            <!-- COLONNA 1: Brand e Dati Fiscali -->
+            <div class="footer-col">
+                <!-- Logo nel footer: Rimossi filtri per mostrare i colori originali -->
+                <img src="{{ url_for('static', filename='img/logo_sicilyevents bianco.png') }}" 
+                     alt="Sicily Events" 
+                     style="height: 50px; margin-bottom: 20px;">
+            </div>
+
+            <!-- COLONNA 2: Indirizzo -->
+            <div class="footer-col">
+                <h3>Headquarters</h3>
+                <p>Cda. Castrorao</p>
+                <p>Castiglione di Sicilia</p>
+                <p>Italy</p>
+                </p>VAT: IT04741570875</p>
+            </div>
+
+            <!-- COLONNA 3: Contatti -->
+            <div class="footer-col">
+                <h3>Contact Us</h3>
+                <p>Tel: <a href="tel:+39094247663" style="color: inherit; text-decoration: none;">+39 0942 47663</a></p>
+                <p>Mob: <a href="tel:+393339429766" style="color: inherit; text-decoration: none;">+39 333 942 9766</a></p>
+                <p>Email: <a href="mailto:info@sicilyevents.com" style="color: inherit; text-decoration: none;">info@sicilyevents.com</a></p>
+            </div>
+
+            <!-- COLONNA 4: Social (Loghi Instagram e LinkedIn) -->
+            <div class="footer-col">
+                <h3>Follow Us</h3>
+                <div style="display: flex; gap: 15px; align-items: center;">
+                    <!-- Instagram Logo -->
+                    <a href="{{ site.instagram }}" target="_blank" title="Instagram">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="white">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                        </svg>
+                    </a>
+                    
+                    <!-- LinkedIn Logo -->
+                    <a href="https://www.linkedin.com/" target="_blank" title="LinkedIn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="white">
+                            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+        
+        <div class="copyright">
+            <p>&copy; 2025 SicilyEvents srl. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
